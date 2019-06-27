@@ -15,7 +15,7 @@ type Input struct {
 
 // Analyze analyze the sentiment of a sentence
 func Analyze(w http.ResponseWriter, r *http.Request) {
-	if r.Method != "POST" && r.URL.Path != "Analyze" {
+	if r.Method != "POST" || r.URL.Path != "Analyze" {
 		http.NotFound(w, r)
 		return
 	}
